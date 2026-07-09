@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MorghabiClicker v1.0 beta</title>
+    </head>
+    <style>
+
+        body{
+            overflow: hidden;
+            background:linear-gradient(rgb(11, 255, 174),rgb(255, 0, 221));
+            min-height: 100vh;
+        }
+        #div1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            margin-top: 130px;
+            gap: 30px;
+            text-shadow: 
+            1px 0px rgb(0, 255, 98),
+            -1px 0px rgb(0, 60, 255),
+            0px 1px rgb(255, 0, 0),
+            0px -1px rgb(255, 251, 0);
+        }
+        #shopMenu{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(0, 110, 255);
+            border: 2px solid rgb(0, 0, 196);
+            border-radius: 50px;
+            padding: 100px;
+            margin-top: 60px;
+            gap: 0px;
+            text-shadow: 
+            -1px 0px rgb(255, 0, 0),
+            0px -1px rgb(255, 0, 0),
+            0px 1px rgb(255, 0, 0);
+            font-size: 120%;
+            color: white;
+        }
+        .price{
+            color: rgb(0, 255, 0);
+            text-shadow: none;
+            font-size: 22px;
+        }
+        #JustWantItForTheMargin{
+            margin-bottom: 35px ;
+        }
+        #JustWantItForTheMargin2{
+            margin-bottom: 35px ;
+        }
+
+        #theCoin{
+            background: transparent;
+            cursor: pointer;        
+            border-radius: 1000px;
+            transition: 0.3s;
+            border: 3px solid rgb(255, 255, 255);
+        }
+        #theCoin:hover{
+            transform: scale(1.1);
+            background-color: rgb(0, 204, 255);
+        }
+
+        #MorghabiPhoto{
+            width: 400px;
+            height: 400px;
+            border-radius: 1000px;
+        }
+
+        #changeTheme{
+            border: 3px solid rgb(52, 0, 194);
+            background-color: rgb(66, 101, 255);
+            color: white;
+            height: 40px;
+            width: 120px;
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            border-radius: 1000px;
+            transition: 0.5s;
+        }
+        #changeTheme:hover{
+            transform: scale(1.1);
+            background-color: rgb(119, 0, 255);
+        }
+
+        #shop{
+            border: 2px solid rgb(255, 187, 0);
+            background-color: rgb(236, 255, 66);
+            color: rgb(0, 0, 0);
+            height: 40px;
+            width: 120px;
+            position: fixed;
+            top: 23px;
+            right: 25px;
+            border-radius: 1000px;
+            transition: 0.5s;
+        }
+        #shop:hover{
+            transform: scale(1.1);
+            background-color: rgb(255, 136, 0);
+        }
+
+        .shopBtns{
+            border: 1px solid rgb(0, 202, 34);
+            background-color: rgb(0, 255, 42);
+            color: rgb(8, 8, 8);
+            height: 40px;
+            width: 120px;
+            border-radius: 1000px;
+            transition: 0.2s;
+        }
+        .shopBtns:hover{
+            background-color: rgb(0, 255, 191);
+            transform: scale(1.1);
+        }
+
+        #back{
+            border: 2px solid rgb(255, 187, 0);
+            background-color: rgb(236, 255, 66);
+            color: rgb(0, 0, 0);
+            height: 40px;
+            width: 120px;
+            position: fixed;
+            top: 23px;
+            right: 25px;
+            border-radius: 1000px;
+            transition: 0.5s;
+        }
+        #back:hover{
+        transform: scale(1.1);
+            background-color: rgb(255, 136, 0);
+        }
+        #version{
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: rgb(255, 255, 255);
+        }
+        #saveTitle{
+            margin-top: -10px;
+            color: rgb(0, 0, 0);
+        }
+        #save{
+            margin-top: 10px;
+        }
+
+   </style>
+
+<body id="body">
+
+    <div id="gameMenuScreen">
+    <div id="div1">
+    <h1 id="coinsCounter">Morghabi Coins : 0</h1>
+   <button id="theCoin"><img id="MorghabiPhoto" src="Morghabi.png"></button>
+   <button id="save" class="shopBtns">Save your DATA</button>
+   <p id="saveTitle" class="price">click to save your data</p>
+    </div>
+    <button id="changeTheme">ChangeTheme</button>
+    <button id="shop">Shop</button>
+    </div>
+
+    <div id="shopMenuScreen">
+        <div id="shopMenu">
+            <h2>Buy perks to faster your run</h2>
+            <p id="click+Price" class="price">Price : 100</p>
+            <button id="clicks+" class="shopBtns">Clicks + 2</button>
+            <p id="JustWantItForTheMargin">every click gives +2 more coin</p>
+            <p id="autoClickPrice" class="price">Price : 200</p>
+            <button id="autoClick" class="shopBtns">Autoclick + 10/s</button>
+            <p id="JustWantItForTheMargin2">your autoclicker clicks 10 more per second</p>
+
+            <p id="randomCoinsPrice" class="price">Price : 100000</p>
+            <button id="randomClick" class="shopBtns">randomCoins</button>
+            <p>every 5s get 0~10000 coins</p>
+        </div>
+        <button id="back">Back</button>
+    </div>
+            <p id="version">Version 1.0 beta</p>
+
+
+<script>
+    const gameMenuScreen = document.getElementById("gameMenuScreen");
+    const shopMenuScreen = document.getElementById("shopMenuScreen");
+    gameMenuScreen.style.display = "block";
+    shopMenuScreen.style.display = "none"
+    const shop = document.getElementById("shop");
+    const back = document.getElementById("back");
+    const box = document.getElementById("body");
+    const changeTheme = document.getElementById("changeTheme");
+    const theCoin = document.getElementById("theCoin");
+    const coinsCounter = document.getElementById("coinsCounter");
+    const clicklvllUp = document.getElementById("clicks+");
+    const clicklvllUpPrice = document.getElementById("click+Price")
+    const autoClick = document.getElementById("autoClick")
+    const autoClickPrice = document.getElementById("autoClickPrice");
+    const randomClick = document.getElementById("randomClick");
+    const randomCoinsPrice = document.getElementById("randomCoinsPrice");
+    const save = document.getElementById("save");
+    const saveTitle  = document.getElementById("saveTitle");
+    const clickSound = new Audio("clickSound.mp4")
+    let coins = 0;
+    let theme = 1;
+    let upgrade = 0;
+    let clicklvlUpCost = 100;
+    let autoClicklvlUpCost = 200;
+    let autoClickF = 0;
+    let randomCoinsCost = 100000;
+    let randomNumUpMax = 0;
+    let randomNumUp = 
+    Math.floor(Math.random()*randomNumUpMax);
+
+        if(localStorage.getItem("coins")!== null){
+        coins = Number(localStorage.getItem("coins")); }
+        if(localStorage.getItem("upgrade")!== null){
+        upgrade = Number(localStorage.getItem("upgrade")); }
+        if(localStorage.getItem("clicklvlUpCost")!== null){
+        clicklvlUpCost = Number(localStorage.getItem("clicklvlUpCost")); }
+        if(localStorage.getItem("clicklvlUpCost")!== null){
+        clicklvlUpCost = Number(localStorage.getItem("clicklvlUpCost")); }
+        if(localStorage.getItem("autoClicklvlUpCost")!== null){
+        autoClicklvlUpCost = Number(localStorage.getItem("autoClicklvlUpCost")); }
+        if(localStorage.getItem("autoClickF")!== null){
+        autoClickF = Number(localStorage.getItem("autoClickF")); }
+        if(localStorage.getItem("randomCoinsCost")!== null){
+        randomCoinsCost = Number(localStorage.getItem("randomCoinsCost")); }
+        if(localStorage.getItem("randomNumUpMax")!== null){
+        randomNumUpMax = Number(localStorage.getItem("randomNumUpMax")); }
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+
+        if(autoClickF>0){
+        setInterval(function(){
+            coins = coins + autoClickF;
+            coinsCounter.textContent = "Morghabi Coins : " + coins;
+        },100); }
+
+        if(randomNumUpMax>0){
+            setInterval(function(){
+            randomNumUp = Math.floor(Math.random()*randomNumUpMax);
+            coins = coins + randomNumUp;
+            coinsCounter.textContent = "Morghabi Coins : " + coins;
+
+        },100); }
+        
+
+
+    changeTheme.onclick = function() {              //theme colors 
+
+        if(theme <= 4){                             //amout of themes
+            theme = theme +1 ;
+    }
+    else{
+        theme = 1
+    }
+    console.log("theme");
+         if(theme === 1){
+    box.style.background = "linear-gradient(rgb(11, 255, 174),rgb(255, 0, 221))"
+}
+    else if(theme === 2){
+    box.style.background = "linear-gradient(gray,black)"
+}
+   else if(theme === 3){
+    box.style.background = "linear-gradient(rgb(255, 196, 255),orange)"
+}
+   else if(theme === 4){
+    box.style.background = "linear-gradient(white,rgb(68, 68, 68))"
+}
+   else if(theme === 5){
+    box.style.background = "linear-gradient(pink,cyan)"
+}
+}           
+
+shop.onclick = function(){
+    gameMenuScreen.style.display = "none";
+    shopMenuScreen.style.display = "block";
+}
+back.onclick = function(){
+    gameMenuScreen.style.display = "block";
+    shopMenuScreen.style.display = "none"
+}
+                                    //going in/out of shop
+    theCoin.onclick = function(){           //getting coins by clicking
+        coins = coins + 1 + upgrade
+        clickSound.currentTime = 0;
+        clickSound.play();
+        coins = Math.floor(coins);   
+        coinsCounter.textContent = "Morghabi Coins : " + coins;  
+    }
+
+clicklvllUp.onclick = function(){           //CoinsClickUpgrade
+    if(coins >= clicklvlUpCost){
+        coins = coins - clicklvlUpCost
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+        clicklvlUpCost = clicklvlUpCost*1.5;
+        clicklvllUpPrice.textContent = "Price : " + clicklvlUpCost;
+        upgrade = upgrade + 2;
+        clicklvlUpCost = Math.floor(clicklvlUpCost); 
+    }
+    else{
+        console.log("Not enough coins")
+    }
+}
+
+autoClick.onclick = function autoclick(){                     //*****badan moshkel .5 shodan ro fix kon
+    if(coins >= autoClicklvlUpCost){
+        coins = coins - autoClicklvlUpCost
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+        autoClicklvlUpCost = autoClicklvlUpCost*1.5;
+        autoClickPrice.textContent = "Price : " + autoClicklvlUpCost;
+        autoClicklvlUpCost = Math.floor(autoClicklvlUpCost); 
+        autoClickF = autoClickF + 1;
+        setInterval(function(){
+            coins = coins + autoClickF;
+            coinsCounter.textContent = "Morghabi Coins : " + coins;
+        },100);
+
+    }
+    else{
+        console.log("Not enough coins")
+    }
+}
+
+randomClick.onclick = function timerClick(){           
+    if(coins >= randomCoinsCost){
+        coins = coins - randomCoinsCost
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+
+        randomCoinsCost = randomCoinsCost*1.5;
+        randomCoinsPrice.textContent = "Price : " + randomCoinsCost;
+        randomCoinsCost = Math.floor(randomCoinsCost); 
+
+        randomNumUpMax = randomNumUpMax + 10000;
+        
+
+        setInterval(function(){
+            randomNumUp = Math.floor(Math.random()*randomNumUpMax);
+            coins = coins + randomNumUp;
+            coinsCounter.textContent = "Morghabi Coins : " + coins;
+            console.log(randomNumUp);
+        },5000);
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+
+    }
+    else{
+        console.log("Not enough coins")
+    }
+}
+
+
+
+save.onclick = function(){
+localStorage.setItem("coins",coins);
+localStorage.setItem("upgrade",upgrade);
+localStorage.setItem("clicklvlUpCost",clicklvlUpCost);
+localStorage.setItem("autoClicklvlUpCost",autoClicklvlUpCost);
+localStorage.setItem("autoClickF",autoClickF);
+localStorage.setItem("randomCoinsCost",randomCoinsCost);
+localStorage.setItem("randomNumUpMax",randomNumUpMax);
+saveTitle.textContent = "Data saved!"
+}
+
+
+
+</script>
+</body>
+</html>
