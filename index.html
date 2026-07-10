@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MorghabiClicker v1.0 Release</title>
+        <title>MorghabiClicker v1.1 Release</title>
     </head>
     <style>
 
@@ -66,7 +66,7 @@
         }
         #theCoin:hover{
             transform: scale(1.1);
-            background-color: rgb(0, 204, 255);
+            background-color: rgb(255, 0, 0);
         }
 
         #MorghabiPhoto{
@@ -170,7 +170,7 @@
             border: 2px solid rgb(0, 0, 196);
             border-radius: 50px;
             padding: 100px;
-            margin-top: 70px;
+            margin-top: 60px;
             gap: 0px;
             text-shadow: 
             -2px 0px rgb(8, 0, 117),
@@ -211,6 +211,55 @@
             font-size: 18px;
 
         }
+        #resetMenu{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(200, 255, 0);
+            border: 2px solid rgb(0, 0, 196);
+            border-radius: 50px;
+            padding: 100px;
+            margin-top: 60px;
+            gap: 0px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+        }
+        #resetYes{
+            background-color: red;
+        }
+        #resetNo{
+            margin-left: 475px;
+        }
+        #relogScreen{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(255, 72, 0);
+            border: 2px solid rgb(0, 0, 196);
+            border-radius: 50px;
+            padding: 100px;
+            margin-top: 200px;
+            gap: 0px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+        }
+
 
    </style>
 
@@ -245,24 +294,38 @@
             <p>every 5s get 0~20000 coins</p>
         </div>
         <button id="back">Back</button>
-    </div>
+    </div>      
 
-        <div id="newThings">
+        <div id="newThings">                        
             <button id="back2" class="shopBtns">Back</button>
                 <div id="newThingsMenu">
             <h2>New Thing from last update</h2>
-            <h4>1.0 Beta -------------------------------------------------------------------1.0 Release</h4>
+            <h4>1.0 Release -------------------------------------------------------------------1.1 Release</h4>
             <h4>New thing</h4>
-            <p class="yapG">Reset button added</p>
-            <p class="yapG">new things added idk</p>
+            <p class="yapG">Double check before reseting</p>
+            <p class="yapG">Random things that i dont remember idk</p>
             <h4>------------------Bugs fixed------------------</h4>
-            <p class="yap">-Closing the web bug Fixed:<br>Now after logging out/in your auto clicker wont lose speed</p>
-            <p class="yap">-buying prices after logging bug Fixed:<br>Now after logging in/out the prices wont change to the base price</p>
-            <p class="yap">-Random number bug Fixed:<br>After buying the randomitem and logging out , its speed would change</p>
+            <p class="yap">-Saving title not updating:<br>After saving data , the title updates!</p>
 
                 </div>
         </div>
-            <p id="version">Version 1.0 Release<br>By Maxsus</p>
+
+        <div id="resetMenuS">
+            <div id="resetMenu">
+                <h1 id="secondCheck">Are you sure you wanna delete all progress?</h1>
+                <button id="resetYes" class="shopBtns">YES</button>
+                <Button id="resetNo" class="shopBtns">No</Button>
+            </div>
+        </div>
+
+        <div id = "relog">
+            <div id="relogScreen">
+                <h1>Restarted succesfully!</h1>
+                <h1>Close the website and open to start over!</h1>
+            </div>
+        </div>
+
+            <p id="version">Version 1.1 Release<br>By Maxsus</p>
 
 
 
@@ -271,9 +334,13 @@
     const gameMenuScreen = document.getElementById("gameMenuScreen");
     const shopMenuScreen = document.getElementById("shopMenuScreen");
     const newThings = document.getElementById("newThings");
+    const resetMenu = document.getElementById("resetMenu");
+        const relog = document.getElementById("relog");
     gameMenuScreen.style.display = "block";
     shopMenuScreen.style.display = "none";
     newThings.style.display = "none";
+    resetMenu.style.display = "none";
+    relog.style.display = "none";
     const shop = document.getElementById("shop");
     const back = document.getElementById("back");
     const whatsNewBtn = document.getElementById("whatsNewBtn");
@@ -290,11 +357,14 @@
     const randomClick = document.getElementById("randomClick");
     const randomCoinsPrice = document.getElementById("randomCoinsPrice");
     const save = document.getElementById("save");
-    const saveTitle  = document.getElementById("saveTitle");
+    const saveTitle = document.getElementById("saveTitle");
     const clickSound = new Audio("clickSound.mp4")
     const resetP = document.getElementById("resetP");
-    let coins = 0;
-    let theme = 1;
+    const resetYes = document.getElementById("resetYes");
+    const resetNo = document.getElementById("resetNo")
+
+    let coins = 0;;
+    let theme = 1
     let upgrade = 0;
     let clicklvlUpCost = 100;
     let autoClicklvlUpCost = 200;
@@ -466,6 +536,11 @@ randomClick.onclick = function timerClick(){
 }
 
 reset.onclick = function(){
+
+    gameMenuScreen.style.display = "none";
+    resetMenu.style.display = "block";
+
+    resetYes.onclick = function(){
     localStorage.clear();
     let coins = 0;
     let theme = 1;
@@ -476,11 +551,17 @@ reset.onclick = function(){
     let randomCoinsCost = 100000;
     let randomNumUpMax = 0;
     coinsCounter.textContent = "Morghabi Coins : " + coins;  
+    gameMenuScreen.style.display = "none";
+    resetMenu.style.display = "none";
+    relog.style.display = "block";
     resetP.textContent = "Reset! Relog to start over"
     resetP.style.color = "rgb(143, 0, 0)"
-
+    }
+    resetNo.onclick = function(){
+    gameMenuScreen.style.display = "block";
+    resetMenu.style.display = "none";
 }
-
+}
 
 save.onclick = function(){
 localStorage.setItem("coins",coins);
@@ -490,13 +571,12 @@ localStorage.setItem("autoClicklvlUpCost",autoClicklvlUpCost);
 localStorage.setItem("autoClickF",autoClickF);
 localStorage.setItem("randomCoinsCost",randomCoinsCost);
 localStorage.setItem("randomNumUpMax",randomNumUpMax);
-localStorage.setItem("power",power);
 saveTitle.textContent = "Data saved!"
 }
 
 whatsNewBtn.onclick = function(){
     gameMenuScreen.style.display = "none";
-    newThings.style.display = "block";
+    newThings.style.display = "flex";
 }
 
 
