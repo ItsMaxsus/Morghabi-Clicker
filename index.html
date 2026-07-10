@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MorghabiClicker v1.0 beta</title>
+        <title>MorghabiClicker v1.0 Release</title>
     </head>
     <style>
 
@@ -152,6 +152,65 @@
         #save{
             margin-top: 10px;
         }
+        #whatsNewBtn{
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 100px;
+        }
+        #newThingsMenu{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(200, 255, 0);
+            border: 2px solid rgb(0, 0, 196);
+            border-radius: 50px;
+            padding: 100px;
+            margin-top: 70px;
+            gap: 0px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+        }
+        #back2{
+        position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);   
+            
+        }
+        .yap{
+            color: rgb(0, 0, 0);
+            text-shadow: none;
+        }
+        .yapG{
+            color: rgb(255, 0, 0);
+            text-shadow: none;
+        }
+        #reset{
+            background-color: red;
+            text-shadow: none;
+            border: 2px solid rgb(143, 0, 0);
+            position: fixed;
+            bottom: 20px;
+            right: 45px;
+        }
+        #resetP{
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            color:rgb(255, 255, 255);
+            font-size: 18px;
+
+        }
 
    </style>
 
@@ -166,6 +225,9 @@
     </div>
     <button id="changeTheme">ChangeTheme</button>
     <button id="shop">Shop</button>
+    <button id="whatsNewBtn" class="shopBtns">Update news</button>
+    <p id="resetP">Click to reset EVERYTHING!</p>
+    <button id="reset" class="shopBtns">RESET all progress</button>
     </div>
 
     <div id="shopMenuScreen">
@@ -180,21 +242,44 @@
 
             <p id="randomCoinsPrice" class="price">Price : 100000</p>
             <button id="randomClick" class="shopBtns">randomCoins</button>
-            <p>every 5s get 0~10000 coins</p>
+            <p>every 5s get 0~20000 coins</p>
         </div>
         <button id="back">Back</button>
     </div>
-            <p id="version">Version 1.0 beta</p>
+
+        <div id="newThings">
+            <button id="back2" class="shopBtns">Back</button>
+                <div id="newThingsMenu">
+            <h2>New Thing from last update</h2>
+            <h4>1.0 Beta -------------------------------------------------------------------1.0 Release</h4>
+            <h4>New thing</h4>
+            <p class="yapG">Reset button added</p>
+            <p class="yapG">new things added idk</p>
+            <h4>------------------Bugs fixed------------------</h4>
+            <p class="yap">-Closing the web bug Fixed:<br>Now after logging out/in your auto clicker wont lose speed</p>
+            <p class="yap">-buying prices after logging bug Fixed:<br>Now after logging in/out the prices wont change to the base price</p>
+            <p class="yap">-Random number bug Fixed:<br>After buying the randomitem and logging out , its speed would change</p>
+
+                </div>
+        </div>
+            <p id="version">Version 1.0 Release<br>By Maxsus</p>
+
 
 
 <script>
+
     const gameMenuScreen = document.getElementById("gameMenuScreen");
     const shopMenuScreen = document.getElementById("shopMenuScreen");
+    const newThings = document.getElementById("newThings");
     gameMenuScreen.style.display = "block";
-    shopMenuScreen.style.display = "none"
+    shopMenuScreen.style.display = "none";
+    newThings.style.display = "none";
     const shop = document.getElementById("shop");
     const back = document.getElementById("back");
+    const whatsNewBtn = document.getElementById("whatsNewBtn");
+    const back2 = document.getElementById("back2");
     const box = document.getElementById("body");
+    const reset = document.getElementById("reset");
     const changeTheme = document.getElementById("changeTheme");
     const theCoin = document.getElementById("theCoin");
     const coinsCounter = document.getElementById("coinsCounter");
@@ -207,6 +292,7 @@
     const save = document.getElementById("save");
     const saveTitle  = document.getElementById("saveTitle");
     const clickSound = new Audio("clickSound.mp4")
+    const resetP = document.getElementById("resetP");
     let coins = 0;
     let theme = 1;
     let upgrade = 0;
@@ -224,31 +310,46 @@
         upgrade = Number(localStorage.getItem("upgrade")); }
         if(localStorage.getItem("clicklvlUpCost")!== null){
         clicklvlUpCost = Number(localStorage.getItem("clicklvlUpCost")); }
+        clicklvllUpPrice.textContent = "Price : " + clicklvlUpCost;
         if(localStorage.getItem("clicklvlUpCost")!== null){
         clicklvlUpCost = Number(localStorage.getItem("clicklvlUpCost")); }
         if(localStorage.getItem("autoClicklvlUpCost")!== null){
         autoClicklvlUpCost = Number(localStorage.getItem("autoClicklvlUpCost")); }
+        autoClickPrice.textContent = "Price : " + autoClicklvlUpCost;
         if(localStorage.getItem("autoClickF")!== null){
         autoClickF = Number(localStorage.getItem("autoClickF")); }
         if(localStorage.getItem("randomCoinsCost")!== null){
         randomCoinsCost = Number(localStorage.getItem("randomCoinsCost")); }
+        randomCoinsPrice.textContent = "Price : " + randomCoinsCost;
         if(localStorage.getItem("randomNumUpMax")!== null){
         randomNumUpMax = Number(localStorage.getItem("randomNumUpMax")); }
+        if(localStorage.getItem("power")!== null){
+        power = Number(localStorage.getItem("power")); }
         coinsCounter.textContent = "Morghabi Coins : " + coins;
+        
+        if(autoClickF > 0){
 
-        if(autoClickF>0){
+    for(let i = 1; i <= autoClickF; i++){
+
+        let power = i;
+
         setInterval(function(){
-            coins = coins + autoClickF;
-            coinsCounter.textContent = "Morghabi Coins : " + coins;
-        },100); }
 
+            coins = coins + power;
+            coinsCounter.textContent = "Morghabi Coins : " + coins;
+
+        },100);
+
+    }
+
+}
         if(randomNumUpMax>0){
             setInterval(function(){
             randomNumUp = Math.floor(Math.random()*randomNumUpMax);
             coins = coins + randomNumUp;
             coinsCounter.textContent = "Morghabi Coins : " + coins;
 
-        },100); }
+        },5000); }
         
 
 
@@ -282,9 +383,18 @@ shop.onclick = function(){
     gameMenuScreen.style.display = "none";
     shopMenuScreen.style.display = "block";
 }
+
 back.onclick = function(){
+
     gameMenuScreen.style.display = "block";
-    shopMenuScreen.style.display = "none"
+    shopMenuScreen.style.display = "none";
+
+}
+back2.onclick = function(){
+
+    gameMenuScreen.style.display = "block";
+    newThings.style.display = "none";
+
 }
                                     //going in/out of shop
     theCoin.onclick = function(){           //getting coins by clicking
@@ -317,8 +427,9 @@ autoClick.onclick = function autoclick(){                     //*****badan moshk
         autoClickPrice.textContent = "Price : " + autoClicklvlUpCost;
         autoClicklvlUpCost = Math.floor(autoClicklvlUpCost); 
         autoClickF = autoClickF + 1;
+        let power = autoClickF;
         setInterval(function(){
-            coins = coins + autoClickF;
+            coins = coins + power;
             coinsCounter.textContent = "Morghabi Coins : " + coins;
         },100);
 
@@ -337,7 +448,7 @@ randomClick.onclick = function timerClick(){
         randomCoinsPrice.textContent = "Price : " + randomCoinsCost;
         randomCoinsCost = Math.floor(randomCoinsCost); 
 
-        randomNumUpMax = randomNumUpMax + 10000;
+        randomNumUpMax = randomNumUpMax + 20000;
         
 
         setInterval(function(){
@@ -354,6 +465,21 @@ randomClick.onclick = function timerClick(){
     }
 }
 
+reset.onclick = function(){
+    localStorage.clear();
+    let coins = 0;
+    let theme = 1;
+    let upgrade = 0;
+    let clicklvlUpCost = 100;
+    let autoClicklvlUpCost = 200;
+    let autoClickF = 0;
+    let randomCoinsCost = 100000;
+    let randomNumUpMax = 0;
+    coinsCounter.textContent = "Morghabi Coins : " + coins;  
+    resetP.textContent = "Reset! Relog to start over"
+    resetP.style.color = "rgb(143, 0, 0)"
+
+}
 
 
 save.onclick = function(){
@@ -364,8 +490,15 @@ localStorage.setItem("autoClicklvlUpCost",autoClicklvlUpCost);
 localStorage.setItem("autoClickF",autoClickF);
 localStorage.setItem("randomCoinsCost",randomCoinsCost);
 localStorage.setItem("randomNumUpMax",randomNumUpMax);
+localStorage.setItem("power",power);
 saveTitle.textContent = "Data saved!"
 }
+
+whatsNewBtn.onclick = function(){
+    gameMenuScreen.style.display = "none";
+    newThings.style.display = "block";
+}
+
 
 
 
