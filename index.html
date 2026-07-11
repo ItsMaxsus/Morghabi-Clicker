@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MorghabiClicker v1.1 Release</title>
+        <title>MorghabiClicker v1.1 Debugged</title>
     </head>
     <style>
 
@@ -300,12 +300,12 @@
             <button id="back2" class="shopBtns">Back</button>
                 <div id="newThingsMenu">
             <h2>New Thing from last update</h2>
-            <h4>1.0 Release -------------------------------------------------------------------1.1 Release</h4>
+            <h4>1.1 Release -------------------------------------------------------------------1.1 Debugged</h4>
             <h4>New thing</h4>
-            <p class="yapG">Double check before reseting</p>
-            <p class="yapG">Random things that i dont remember idk</p>
+            <p class="yapG">Random numbers speed increase by 20% each time you buy it!</p>
             <h4>------------------Bugs fixed------------------</h4>
-            <p class="yap">-Saving title not updating:<br>After saving data , the title updates!</p>
+            <p class="yap">-Random numbers speed would drop after relogging:<br>Doesnt drop anymore!</p>
+            <p class="yap">No more bugs HOPEFULLY</p>
 
                 </div>
         </div>
@@ -320,12 +320,12 @@
 
         <div id = "relog">
             <div id="relogScreen">
-                <h1>Restarted succesfully!</h1>
+                <h1>Reset succesfully!</h1>
                 <h1>Close the website and open to start over!</h1>
             </div>
         </div>
 
-            <p id="version">Version 1.1 Release<br>By Maxsus</p>
+            <p id="version">Version 1.1 Debugged<br>By Maxsus</p>
 
 
 
@@ -363,7 +363,7 @@
     const resetYes = document.getElementById("resetYes");
     const resetNo = document.getElementById("resetNo")
 
-    let coins = 0;;
+    let coins = 0;
     let theme = 1
     let upgrade = 0;
     let clicklvlUpCost = 100;
@@ -371,6 +371,8 @@
     let autoClickF = 0;
     let randomCoinsCost = 100000;
     let randomNumUpMax = 0;
+    let randomTimer;
+    let randomClickSpeed = 5000;
     let randomNumUp = 
     Math.floor(Math.random()*randomNumUpMax);
 
@@ -395,6 +397,8 @@
         randomNumUpMax = Number(localStorage.getItem("randomNumUpMax")); }
         if(localStorage.getItem("power")!== null){
         power = Number(localStorage.getItem("power")); }
+        if(localStorage.getItem("randomClickSpeed")!== null){
+        randomClickSpeed = Number(localStorage.getItem("randomClickSpeed")); }
         coinsCounter.textContent = "Morghabi Coins : " + coins;
         
         if(autoClickF > 0){
@@ -411,15 +415,16 @@
         },100);
 
     }
+        }
 
-}
         if(randomNumUpMax>0){
-            setInterval(function(){
+            randomTimer = setInterval(function(){
             randomNumUp = Math.floor(Math.random()*randomNumUpMax);
             coins = coins + randomNumUp;
             coinsCounter.textContent = "Morghabi Coins : " + coins;
+                        console.log(randomNumUp);
 
-        },5000); }
+        },randomClickSpeed); }
         
 
 
@@ -515,18 +520,20 @@ randomClick.onclick = function timerClick(){
         coinsCounter.textContent = "Morghabi Coins : " + coins;
 
         randomCoinsCost = randomCoinsCost*1.5;
+        randomCoinsCost = Math.floor(randomCoinsCost);
+
         randomCoinsPrice.textContent = "Price : " + randomCoinsCost;
-        randomCoinsCost = Math.floor(randomCoinsCost); 
-
+        clearInterval(randomTimer);
         randomNumUpMax = randomNumUpMax + 20000;
-        
+        randomClickSpeed = randomClickSpeed*0.8;
+                console.log(randomClickSpeed);
 
-        setInterval(function(){
+        randomTimer = setInterval(function(){
             randomNumUp = Math.floor(Math.random()*randomNumUpMax);
             coins = coins + randomNumUp;
             coinsCounter.textContent = "Morghabi Coins : " + coins;
             console.log(randomNumUp);
-        },5000);
+        },randomClickSpeed);
         coinsCounter.textContent = "Morghabi Coins : " + coins;
 
     }
@@ -571,6 +578,7 @@ localStorage.setItem("autoClicklvlUpCost",autoClicklvlUpCost);
 localStorage.setItem("autoClickF",autoClickF);
 localStorage.setItem("randomCoinsCost",randomCoinsCost);
 localStorage.setItem("randomNumUpMax",randomNumUpMax);
+localStorage.setItem("randomClickSpeed",randomClickSpeed)
 saveTitle.textContent = "Data saved!"
 }
 
