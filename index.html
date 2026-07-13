@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MorghabiClicker v1.1 Debugged</title>
+        <title>MorghabiClicker v1.2 Release</title>
     </head>
     <style>
 
@@ -269,8 +269,8 @@
     <div id="div1">
     <h1 id="coinsCounter">Morghabi Coins : 0</h1>
    <button id="theCoin"><img id="MorghabiPhoto" src="Morghabi.png"></button>
-   <button id="save" class="shopBtns">Save your DATA</button>
-   <p id="saveTitle" class="price">click to save your data</p>
+   <!--         <button id="save" class="shopBtns">Save your DATA</button>
+   <p id="saveTitle" class="price">click to save your data</p>          --->
     </div>
     <button id="changeTheme">ChangeTheme</button>
     <button id="shop">Shop</button>
@@ -300,12 +300,12 @@
             <button id="back2" class="shopBtns">Back</button>
                 <div id="newThingsMenu">
             <h2>New Thing from last update</h2>
-            <h4>1.1 Release -------------------------------------------------------------------1.1 Debugged</h4>
+            <h4>1.1 Debugged -------------------------------------------------------------------1.2 Release</h4>
             <h4>New thing</h4>
-            <p class="yapG">Random numbers speed increase by 20% each time you buy it!</p>
+            <p class="yapG">Everything auto saves every 80ms!</p>
             <h4>------------------Bugs fixed------------------</h4>
-            <p class="yap">-Random numbers speed would drop after relogging:<br>Doesnt drop anymore!</p>
-            <p class="yap">No more bugs HOPEFULLY</p>
+            <p class="yap">No bugs to be fixed!</p>
+
 
                 </div>
         </div>
@@ -570,7 +570,8 @@ reset.onclick = function(){
 }
 }
 
-save.onclick = function(){
+//save.onclick = function(){
+setInterval( function SaveAll(){
 localStorage.setItem("coins",coins);
 localStorage.setItem("upgrade",upgrade);
 localStorage.setItem("clicklvlUpCost",clicklvlUpCost);
@@ -580,7 +581,8 @@ localStorage.setItem("randomCoinsCost",randomCoinsCost);
 localStorage.setItem("randomNumUpMax",randomNumUpMax);
 localStorage.setItem("randomClickSpeed",randomClickSpeed)
 saveTitle.textContent = "Data saved!"
-}
+},80)
+//}
 
 whatsNewBtn.onclick = function(){
     gameMenuScreen.style.display = "none";
