@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -9,7 +10,7 @@
     
 </script>
     <head>
-        <title>MorghabiClicker v1.5 Beta</title>
+        <title>MorghabiClicker v2.0 </title>
     </head>
     <style>
 
@@ -25,8 +26,8 @@
             justify-content: center;
             width: fit-content;
             margin: auto;
-            margin-top: 130px;
-            gap: 30px;
+            margin-top: 100px;
+            gap: 0px;
             text-shadow: 
             1px 0px rgb(0, 255, 98),
             -1px 0px rgb(0, 60, 255),
@@ -66,7 +67,8 @@
         }
         #theCoin{
             background: transparent;
-            cursor: pointer;        
+            cursor: pointer;   
+            margin-top: 30px;
             border-radius: 1000px;
             transition: 0.3s;
             border: 3px solid rgb(255, 255, 255);
@@ -74,6 +76,7 @@
         #theCoin:hover{
             transform: scale(1.1);
             background-color: rgb(255, 0, 0);
+
         }
         #MorghabiPhoto{
             width: 400px;
@@ -97,8 +100,8 @@
             background-color: rgb(119, 0, 255);
         }
         #shop{
-            border: 2px solid rgb(255, 187, 0);
-            background-color: rgb(236, 255, 66);
+            border: 2px solid rgb(27, 0, 122);
+            background-color: rgb(66, 85, 255);
             color: rgb(0, 0, 0);
             height: 40px;
             width: 120px;
@@ -110,7 +113,7 @@
         }
         #shop:hover{
             transform: scale(1.1);
-            background-color: rgb(255, 136, 0);
+            background-color: rgb(217, 218, 255);
         }
         .shopBtns{
             border: 1px solid rgb(0, 202, 34);
@@ -160,6 +163,10 @@
             left: 50%;
             transform: translateX(-50%);
             margin-bottom: 100px;
+            transition: 0.3s;
+        }
+        #whatsNewBtn:hover{
+            background-color: yellow;
         }
         #newThingsMenu{
             display: flex;
@@ -377,24 +384,218 @@
         #buyImg1{
             background-color: green;
         }
+        #themeCosmetics{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(0, 255, 42);
+            border: 2px solid rgb(88, 25, 0);
+            border-radius: 50px;
+            padding: 100px;
+            gap: 20px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+            margin-top: 100px;
+        }
+        #themeCosmeticsDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #themeCosmeticsBtn{
+            width: 100px;
+            height:100px;
+            margin-top: 20px;
+            border-radius: 1000px;
+            background-color: rgb(255, 136, 0);
+            border: 1px solid rgb(255, 94, 0);
+        }
+        #back5{
+                position: fixed;
+            top: 23px;
+            right: 25px;;  
+                        height: 40px;
+            width: 120px;
+        }
+        #hat1{
+            position: fixed;
+            top: 23%;
+            left: 46.4%;
+            width: 150px;
+            height: 75px;
+            transition: 0.3s;
+        }
+        #hatBuyImgY{
+            height: 80px;
+        }
+        #burnCoins{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(0, 255, 98);
+            border: 2px solid rgb(88, 25, 0);
+            border-radius: 50px;
+            padding: 100px;
+            gap: 20px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+            margin-top: 100px;
+        }
+        #burnBtn{
+            margin-top: 50px;
+        }
+        #BurnBurnBurn{
+    background-color: rgb(255, 102, 0);
+        }
+        #gemsCounter{
+            color: rgb(0, 69, 172);
+        }
+        #gambleRes{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(0, 60, 255);
+            border: 2px solid rgb(88, 25, 0);
+            border-radius: 50px;
+            padding: 100px;
+            gap: 20px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+            margin-top: 100px;
+        }
+        #back7{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: blueviolet;
+        }
+        #settings{
+            position: fixed;
+            top: 80px;
+            left: 25px;
+            background-color: rgb(255, 255, 255);
+            border: 2px solid black;
+        }
+         #settingsDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(109, 109, 109);
+            border: 4px solid rgb(0, 0, 0);
+            border-radius: 50px;
+            padding: 100px;
+            gap: 20px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+            margin-top: 100px;
+         }
+         #back8{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgb(253, 194, 0);
+            border: 2px solid rgb(177, 94, 0);
+         }
+         #medalBtn{
+            background-color: gold;
+            border: 2px solid yellow;
+            position: fixed;
+            top: 123px;
+            right: 25px;
+         }
+         #medalDiv{
+                        display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: auto;
+            background-color: rgb(255, 217, 0);
+            border: 4px solid rgb(150, 102, 0);
+            border-radius: 50px;
+            padding: 100px;
+            text-shadow: 
+            -2px 0px rgb(8, 0, 117),
+            0px -2px rgb(37, 52, 134),
+            0px 2px rgb(12, 0, 117),
+            2px 0px rgb(12, 0, 117);
+            font-size: 120%;
+            color: rgb(255, 255, 255);
+            margin-top: 100px;
+         }
+         #back9{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: blueviolet;
+         }
+         #medalCount{
+            margin-bottom: 60px;
+         }
+        #buyTroph{
+            background-color: red;
+        }
 
    </style>
+
 
 <body id="body">
 
     <div id="gameMenuScreen">
     <div id="div1">
+    <h2 id="gemsCounter">Gems : 0</h2>
     <h1 id="coinsCounter">Morghabi Coins : 0</h1>
    <button id="theCoin"><img id="MorghabiPhoto" src="Morghabi.png"></button>
+
+    <img src="Hat1.png" id="hat1">
+
    <!--         <button id="save" class="shopBtns">Save your DATA</button> --->
    <p  class="price">Everything auto saves</p>      
+       <button id="burnBtn" class="shopBtns">Gambling!</button>
     </div>
     <button id="changeTheme">ChangeTheme</button>
+    <button id="settings" class="shopBtns">Settings</button>
     <button id="shop">Shop</button>
     <button id="whatsNewBtn" class="shopBtns">Update news</button>
     <p id="resetP">Click to reset EVERYTHING!</p>
     <button id="reset" class="shopBtns">RESET all progress</button>
     <button id="cosmetics" class="shopBtns">Cosmetics!!</button>
+    <button id="medalBtn" class="shopBtns">Trophies!</button>
+
+
     </div>
 
     <div id="shopMenuScreen">
@@ -418,14 +619,12 @@
             <button id="back2" class="shopBtns">Back</button>
                 <div id="newThingsMenu">
             <h2>New Thing from last update</h2>
-            <h4>1.2 Release -------------------------------------------------------------------1.5 Beta</h4>
+            <h4>1.5 Release -------------------------------------------------------------------2.0</h4>
             <h4>New thing</h4>
-            <p class="yapG">Cosmetics added !</p>
-            <p class="yapG">3 new coin cosmetics!</p>
+            <p class="yapG">it was the Last Update GL</p>
+            <p class="yapG">new games soon...</p>
             <h4>------------------Bugs fixed------------------</h4>
-            <p class="yap">Reset Bug got fixed!</p>
             <p class="yap">Lots of bugs that I dont remember</p>
-            <h3>If you found any bug msg to @Its_Maxsus on TG!</h3>
 
                 </div>
         </div>
@@ -450,6 +649,7 @@
         <div id="cosmeticsScreen">
             <h1>Buy cosmetics to customize your game!</h1>
             <button id="coinCosmeticsBtn" class="shopBtns">Coins Cosmetics!</button>
+            <button id="themeCosmeticsBtn" class="shopBtns">Cosmetics!</button>
             <p>(Other cosmetics in next updates!)</p>
         </div>
     </div>
@@ -484,10 +684,68 @@
                 <button id="useImg4" class="useImg">Use this Image</button>
                 </div>
 
+                <div id="csmtcDiv6" class="csmtcDivs">
+                <img class="csmtcImg" src="goldCoin.png">
+                <p>cost : 1Bil !! </p>
+                <button id="buyImg6" class="buyImg">Buy this Image</button>
+                <button id="useImg6" class="useImg">Use this Image</button>
+                </div>
+
+                <div id="csmtcDiv5" class="csmtcDivs">
+                <img class="csmtcImg" src="Richh.png">
+                <p>cost : 10Bil !! </p>
+                <button id="buyImg5" class="buyImg">Buy this Image</button>
+                <button id="useImg5" class="useImg">Use this Image</button>
+                </div>
+
+
 
         </div>
 
-            <p id="version">Version 1.5 Beta<br>By Maxsus</p>
+        <div id="themeCosmetics">
+            <button id="back5" class="shopBtns">Back</button>
+                <h1>Buy Custom Cosmetics!</h1>
+                <div id="themeCosmeticsDiv">
+
+                <div id="csmtcDivH1" class="csmtcDivs">
+                <img class="csmtcImg" src="Hat1.png" id="hatBuyImgY">
+                <p>cost : 10 Gems</p>
+                <button id="buyHat1" class="buyImg">Buy this Hat</button>
+                <button id="useHat1" class="useImg">Use this Hat</button>
+                </div>
+
+                </div>
+        </div>
+
+        <div id="burnCoins">
+            <button id="back7" class="shopBtns">Back</button>
+            <h1>You can gamble coins for gems!</h1>
+            <h2>There is a 10% of getting 1 gem!</h2>
+            <h1>gamble 1mil coins</h1>
+            <button id="BurnBurnBurn" class="shopBtns">Gamble!</button>
+        </div>
+
+        <div id="gambleRes">
+                <h1>You used 1mil coins to gamble!</h1>
+                <h1 id="gamblingResultShow">Unfortunately You Lost!</h1>
+                <h1> You can try again !</h1>
+                <button id="okGamble" class="shopBtns">OK</button>
+        </div>
+
+        <div id="settingsDiv">
+            <button id="back8" class="shopBtns">Back</button>
+            <p>toggle Clicking sound!</p>
+            <button id="clickSndSettings" class="shopBtns">Enable!</button>
+        </div>
+
+        <div id="medalDiv">
+        <button id="back9" class="shopBtns">Back</button>
+        <h1 id="medalCount">Trophies : 0</h1>
+        <h3>Buy trophies! each trophy is 100gems</h3>
+        <button id="buyTroph" class="shopBtns">Buy Trophy!</button>
+        </div>
+
+            <p id="version">Version 2.0<br>By Maxsus</p>
 
 
 
@@ -501,6 +759,15 @@
     const cosmetics = document.getElementById("cosmetics");
     const cosmeticsDiv = document.getElementById("cosmeticsDiv");
     const coinCosmetics = document.getElementById("coinCosmetics");
+    const themeCosmetics = document.getElementById("themeCosmetics");
+    const back5 = document.getElementById("back5");
+    const burnCoins = document.getElementById("burnCoins");
+    const gambleRes = document.getElementById("gambleRes");
+    const settingsDiv = document.getElementById("settingsDiv");
+    const medalDiv = document.getElementById("medalDiv")
+
+    const hat1 = document.getElementById("hat1");
+
 
     gameMenuScreen.style.display = "block";
     shopMenuScreen.style.display = "none";
@@ -509,6 +776,12 @@
     relog.style.display = "none";
     cosmeticsDiv.style.display = "none";
     coinCosmetics.style.display = "none";
+    themeCosmetics.style.display = "none";
+    hat1.style.display = "none";
+    burnCoins.style.display = "none";
+    gambleRes.style.display = "none";
+    settingsDiv.style.display = "none";
+    medalDiv.style.display = "none";
 
     const shop = document.getElementById("shop");
     const back = document.getElementById("back");
@@ -534,6 +807,21 @@
     const back3 = document.getElementById("back3");
     const coinCosmeticsBtn = document.getElementById("coinCosmeticsBtn");
     const back4 = document.getElementById("back4");
+    const themeCosmeticsBtn = document.getElementById("themeCosmeticsBtn");
+    const burnBtn = document.getElementById("burnBtn");
+    const burnburnburn = document.getElementById("BurnBurnBurn");
+    const gemsCounter = document.getElementById("gemsCounter");
+    const gamblingResultShow = document.getElementById("gamblingResultShow");
+    const back7 = document.getElementById("back7");
+    const okGamble = document.getElementById("okGamble");
+    const settings = document.getElementById("settings");
+    const clickSndSettings = document.getElementById("clickSndSettings");
+    const medalBtn = document.getElementById("medalBtn")
+    const back8 = document.getElementById("back8")
+    const back9 = document.getElementById("back9")
+    const buyTroph = document.getElementById("buyTroph")
+    const medalCount = document.getElementById("medalCount")
+
     
     const morghabiPhoto = document.getElementById("MorghabiPhoto");
     const buyImg1 = document.getElementById("buyImg1");
@@ -544,8 +832,17 @@
     const useImg3 = document.getElementById("useImg3");
     const buyImg4 = document.getElementById("buyImg4");
     const useImg4 = document.getElementById("useImg4");
+    const buyImg5 = document.getElementById("buyImg5");
+    const useImg5 = document.getElementById("useImg5");
+    const buyImg6 = document.getElementById("buyImg6");
+    const useImg6 = document.getElementById("useImg6");
+    const buyHat1 = document.getElementById("buyHat1");
+    const useHat1 = document.getElementById("useHat1");
+
 
     let coins = 0;
+    let gems = 0;
+    let trophy = 0;
     let theme = 1
     let upgrade = 0;
     let clicklvlUpCost = 100;
@@ -561,11 +858,19 @@
     let imgB2 = false;
     let imgB3 = false;
     let imgB4 = false;
+    let imgB5 = false;
+    let imgB6 = false;
+    let hatB1 = false;
+    let sound = true;
+    let hatInUse = false;
+
 
         if(localStorage.getItem("coins")!== null){
         coins = Number(localStorage.getItem("coins")); }
         if(localStorage.getItem("upgrade")!== null){
         upgrade = Number(localStorage.getItem("upgrade")); }
+        if(localStorage.getItem("trophy")!== null){
+        trophy = Number(localStorage.getItem("trophy")); }
         if(localStorage.getItem("clicklvlUpCost")!== null){
         clicklvlUpCost = Number(localStorage.getItem("clicklvlUpCost")); }
         clicklvllUpPrice.textContent = "Price : " + clicklvlUpCost;
@@ -585,6 +890,8 @@
         power = Number(localStorage.getItem("power")); }
         if(localStorage.getItem("randomClickSpeed")!== null){
         randomClickSpeed = Number(localStorage.getItem("randomClickSpeed")); }
+        if(localStorage.getItem("gems")!== null){
+        gems = Number(localStorage.getItem("gems")); }
 
                 if(localStorage.getItem("imgB1")!== null){
         imgB1 = localStorage.getItem("imgB1") === "true"; }
@@ -594,8 +901,20 @@
         imgB3 = localStorage.getItem("imgB3") === "true"; }         
                 if(localStorage.getItem("imgB4")!== null){
         imgB4 = localStorage.getItem("imgB4") === "true"; }    
+                if(localStorage.getItem("imgB5")!== null){
+        imgB5 = localStorage.getItem("imgB5") === "true"; }    
+                if(localStorage.getItem("imgB6")!== null){
+        imgB6 = localStorage.getItem("imgB6") === "true"; }    
+                if(localStorage.getItem("hatB1")!== null){
+        hatB1 = localStorage.getItem("hatB1") === "true"; }  
+        
+                if(localStorage.getItem("hatInUse")!== null){
+        hatInUse = localStorage.getItem("hatInUse") === "true"; } 
 
         coinsCounter.textContent = "Morghabi Coins : " + coins;
+        gemsCounter.textContent = "Gems :" + gems;
+        medalCount.textContent = "Trophies :" + trophy;
+
         
         if(autoClickF > 0){
 
@@ -622,7 +941,12 @@
 
         },randomClickSpeed); }
         
-        if (imgB2 === true){
+        if(hatInUse === true){
+                hat1.style.display = "flex";
+        }
+
+
+                if (imgB2 === true){
                 buyImg2.style.backgroundColor = "green";
         }
                 if (imgB3 === true){
@@ -631,6 +955,19 @@
                 if (imgB4 === true){
                 buyImg3.style.backgroundColor = "green";
         }
+                if (imgB4 === true){
+                buyImg4.style.backgroundColor = "green";
+        }
+                if (imgB5 === true){
+                buyImg5.style.backgroundColor = "green";
+        }
+                if (imgB6 === true){
+                buyImg6.style.backgroundColor = "green";
+        }
+                if (hatB1 === true){
+                buyHat1.style.backgroundColor = "green";
+        }
+
 
     changeTheme.onclick = function() {              //theme colors 
 
@@ -669,19 +1006,21 @@ back.onclick = function(){
     shopMenuScreen.style.display = "none";
 
 }
-back2.onclick = function(){
+back2.onclick = function(){ 
 
     gameMenuScreen.style.display = "block";
     newThings.style.display = "none";
 
 }
                                     //going in/out of shop
-    theCoin.onclick = function(){           //getting coins by clicking
+theCoin.onclick = function(){           //getting coins by clicking
         coins = coins + 1 + upgrade
-        clickSound.currentTime = 0;
-        clickSound.play();
         coins = Math.floor(coins);   
         coinsCounter.textContent = "Morghabi Coins : " + coins;  
+        if(sound ===true){
+        clickSound.currentTime = 0;
+        clickSound.play();
+        }
     }
 
 clicklvllUp.onclick = function(){           //CoinsClickUpgrade
@@ -754,6 +1093,8 @@ reset.onclick = function(){
     resetYes.onclick = function(){
     localStorage.clear();
      coins = 0;
+     trophy = 0;
+     gems = 0;
      theme = 1
      upgrade = 0;
      clicklvlUpCost = 100;
@@ -769,11 +1110,19 @@ reset.onclick = function(){
      imgB2 = false;
      imgB3 = false;
      imgB4 = false;
+     imgB5 = false;
+     imgB6 = false;
+     hatB1 = false;
+     hatInUse = false;
     buyImg2.style.backgroundColor = "rgb(255, 166, 0)";
     buyImg3.style.backgroundColor = "rgb(255, 166, 0)";
     buyImg4.style.backgroundColor = "rgb(255, 166, 0)";
+    buyImg5.style.backgroundColor = "rgb(255, 166, 0)";
+    buyImg6.style.backgroundColor = "rgb(255, 166, 0)";
+    buyHat1.style.backgroundColor = "rgb(255, 166, 0)";
 
     coinsCounter.textContent = "Morghabi Coins : " + coins;  
+    gemsCounter.textContent = "Gems :" + gems;
     gameMenuScreen.style.display = "none";
     resetMenu.style.display = "none";
     relog.style.display = "block";
@@ -805,8 +1154,14 @@ back4.onclick = function(){
     coinCosmetics.style.display = "none";
 }
 
-
-
+themeCosmeticsBtn.onclick = function(){
+    cosmeticsDiv.style.display = "none";
+    themeCosmetics.style.display = "flex";
+}
+back5.onclick = function(){
+    cosmeticsDiv.style.display = "flex";
+    themeCosmetics.style.display = "none";
+}
 
 buyImg2.onclick = function(){
     if(coins >= 200000){
@@ -842,6 +1197,39 @@ buyImg4.onclick = function(){
         console.log("not enough money");
     }}
 
+buyImg5.onclick = function(){
+    if(coins >= 10000000000){
+        coins = coins - 10000000000;
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+        imgB5 = true;
+              buyImg5.style.backgroundColor = "green";
+    }
+    else{
+        console.log("not enough money");
+    }}
+
+buyImg6.onclick = function(){
+    if(coins >= 1000000000){
+        coins = coins - 1000000000;
+        coinsCounter.textContent = "Morghabi Coins : " + coins;
+        imgB6 = true;
+              buyImg6.style.backgroundColor = "green";
+    }
+    else{
+        console.log("not enough money");
+    }}
+
+buyHat1.onclick = function(){
+    if(gems >= 10){
+        gems = gems - 10;
+        gemsCounter.textContent = "Gems : " + gems;
+        hatB1 = true;
+              buyHat1.style.backgroundColor = "green";
+    }
+    else{
+        console.log("not enough money");
+    }}
+
 useImg1.onclick = function(){
     if(imgB1 === true){
 morghabiPhoto.src = "Morghabi.png";
@@ -870,6 +1258,111 @@ morghabiPhoto.src = "Rich.png";
     console.log("u dont have it");
 }}
 
+useImg5.onclick = function(){
+    if(imgB5 === true){
+morghabiPhoto.src = "Richh.png";
+}else{
+    console.log("u dont have it");
+}}
+
+useImg6.onclick = function(){
+    if(imgB6 === true){
+morghabiPhoto.src = "goldCoin.png";
+}else{
+    console.log("u dont have it");
+}}
+
+useHat1.onclick = function(){
+    if(hatB1 === true){
+    hat1.style.display = "flex";
+    hatInUse = true;
+}else{
+    console.log("u dont have it");
+}}
+
+burnBtn.onclick = function(){
+    gameMenuScreen.style.display = "none";
+    burnCoins.style.display = "flex";
+}
+
+back7.onclick = function(){
+        burnCoins.style.display = "none";
+        gameMenuScreen.style.display = "block"
+        gemsCounter.textContent = "Gems :" + gems;
+
+}
+
+burnburnburn.onclick = function(){
+
+    if(coins >= 1000000){
+
+gambleRes.style.display = "flex"
+burnCoins.style.display = "none";
+coins = coins - 1000000;
+coinsCounter.textContent = "Morghabi Coins : " + coins;  
+
+if(Math.random() < 0.1){
+gems = gems  + 1;
+gemsCounter.textContent = "Gems :" + gems;
+gamblingResultShow.textContent = "You WON! "
+gambleRes.style.backgroundColor = "Green"
+}
+
+else{
+gamblingResultShow.textContent = "You Lost! "
+gambleRes.style.backgroundColor = "Red"
+} 
+    }else{
+    console.log("Not Enough Money")
+} }
+
+okGamble.onclick = function(){
+gambleRes.style.display = "none"
+burnCoins.style.display = "flex";
+}
+
+settings.onclick = function(){
+    settingsDiv.style.display = "flex";
+    gameMenuScreen.style.display = "none";
+}
+ 
+back8.onclick = function(){
+    settingsDiv.style.display = "none";
+    gameMenuScreen.style.display = "block";
+}
+
+clickSndSettings.onclick = function(){
+    if(sound === true){
+        sound = false;
+        clickSndSettings.textContent = "Disabled!";
+        clickSndSettings.style.backgroundColor = "red";
+    }
+    else{
+        sound = true;
+        clickSndSettings.textContent = "Enable!";
+        clickSndSettings.style.backgroundColor = "Green";
+    }
+}
+
+medalBtn.onclick = function(){
+medalDiv.style.display = "flex";
+gameMenuScreen.style.display = "none"
+}
+
+back9.onclick = function(){
+medalDiv.style.display = "none";
+gameMenuScreen.style.display = "block"
+}
+
+buyTroph.onclick = function(){
+    if(gems >= 100){
+        gems = gems -100;
+        gemsCounter.textContent = "Gems :" + gems;
+        trophy = trophy + 1;
+        medalCount.textContent = "Trophies :" + trophy;
+    }
+}
+
 //save.onclick = function(){
 setInterval( function SaveAll(){
 localStorage.setItem("coins",coins);
@@ -879,11 +1372,17 @@ localStorage.setItem("autoClicklvlUpCost",autoClicklvlUpCost);
 localStorage.setItem("autoClickF",autoClickF);
 localStorage.setItem("randomCoinsCost",randomCoinsCost);
 localStorage.setItem("randomNumUpMax",randomNumUpMax);
-localStorage.setItem("randomClickSpeed",randomClickSpeed)
-localStorage.setItem("imgB1",imgB1)
-localStorage.setItem("imgB2",imgB2)
-localStorage.setItem("imgB3",imgB3)
-localStorage.setItem("imgB4",imgB4)
+localStorage.setItem("randomClickSpeed",randomClickSpeed);
+localStorage.setItem("imgB1",imgB1);
+localStorage.setItem("imgB2",imgB2);
+localStorage.setItem("imgB3",imgB3);
+localStorage.setItem("imgB4",imgB4);
+localStorage.setItem("imgB5",imgB5);
+localStorage.setItem("imgB6",imgB6);
+localStorage.setItem("hatB1",hatB1);
+localStorage.setItem("gems",gems);
+localStorage.setItem("trophy",trophy );
+localStorage.setItem("hatInUse",hatInUse);
 //saveTitle.textContent = "Data saved!"
 },100)
 //}
@@ -892,6 +1391,9 @@ whatsNewBtn.onclick = function(){
     gameMenuScreen.style.display = "none";
     newThings.style.display = "flex";
 }
+
+
+
 
 </script>
 </body>
